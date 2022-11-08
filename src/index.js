@@ -22,7 +22,7 @@ var customIcon = L.icon({
     shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
-const marker = L.marker([51.5, -0.09], {icon:customIcon}).addTo(map);
+let marker = L.marker([51.5, -0.09], {icon:customIcon}).addTo(map);
 
 function getData() {
     // check data
@@ -47,6 +47,7 @@ function setInfo(mapData) {
     timezoneInfo.innerText = mapData.location.timezone;
     ispInfo.innerText = mapData.isp;
 
+    map.removeLayer(marker);
     map.setView([mapData.location.lat, mapData.location.lng]);
-    L.marker([mapData.location.lat, mapData.location.lng], {icon:customIcon}).addTo(map);
+    marker = L.marker([mapData.location.lat, mapData.location.lng], {icon:customIcon}).addTo(map);
 }
