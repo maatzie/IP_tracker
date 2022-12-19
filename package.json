@@ -2,6 +2,7 @@
   "name": "ip-address-tracker-master",
   "version": "1.0.0",
   "description": "IP address tracker",
+  "homepage": "https://maatzie.github.io/IP_tracker/",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html --open",
