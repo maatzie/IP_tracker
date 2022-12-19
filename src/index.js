@@ -15,6 +15,8 @@ ipInput.addEventListener('keydown', handleKey);
 
 const mapArea = document.querySelector('.map');
 const map = L.map('map').setView([51.505, -0.09], 13);
+
+const API = process.env.API_KEY;
 addTileLayer(map);
 var customIcon = L.icon({
     iconUrl: icon,
@@ -27,7 +29,7 @@ let marker = L.marker([51.5, -0.09], {icon:customIcon}).addTo(map);
 function getData() {
     // check data
     if(validateIp(ipInput.value)) {
-        fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_jnoEWLr0Oxbw5Ju6h6nb3q3BWtXhS&ipAddress=${ipInput.value}`)
+        fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API}&ipAddress=${ipInput.value}`)
         .then(response => response.json())
         .then(setInfo);
     }
