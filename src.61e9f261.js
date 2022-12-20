@@ -5,8 +5,8 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"JBS3":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),Object.defineProperty(exports,"addTileLayer",{enumerable:!0,get:function(){return r.addTileLayer}}),Object.defineProperty(exports,"validateIp",{enumerable:!0,get:function(){return e.validateIp}});var e=require("./validate-ip"),r=require("./add-tile-layer");
 },{"./validate-ip":"BJnd","./add-tile-layer":"vAL8"}],"Fmrz":[function(require,module,exports) {
-module.exports="%27https:/maatzie.github.io/IP_tracker%27/icon-location.cb9e54e4.svg";
+module.exports="icon-location.cb9e54e4.svg";
 },{}],"H99C":[function(require,module,exports) {
 "use strict";var e=require("./helpers"),n=o(require("../images/icon-location.svg"));function o(e){return e&&e.__esModule?e:{default:e}}var t=document.querySelector(".search-bar__input"),r=document.querySelector("button"),i=document.querySelector("#ip"),c=document.querySelector("#location"),a=document.querySelector("#timezone"),u=document.querySelector("#isp");r.addEventListener("click",y),t.addEventListener("keydown",v);var l=document.querySelector(".map"),d=L.map("map").setView([51.505,-.09],13),s="at_jnoEWLr0Oxbw5Ju6h6nb3q3BWtXhS";(0,e.addTileLayer)(d);var p=L.icon({iconUrl:n.default,iconSize:[30,40],shadowAnchor:[4,62],popupAnchor:[-3,-76]}),m=L.marker([51.5,-.09],{icon:p}).addTo(d);function y(){(0,e.validateIp)(t.value)&&fetch("https://geo.ipify.org/api/v2/country,city?apiKey=".concat(s,"&ipAddress=").concat(t.value)).then(function(e){return e.json()}).then(h)}function v(e){"Enter"===e.key&&y()}function h(e){console.log(e),i.innerText=e.ip,c.innerText=e.location.country+" "+e.location.region,a.innerText=e.location.timezone,u.innerText=e.isp,d.removeLayer(m),d.setView([e.location.lat,e.location.lng]),m=L.marker([e.location.lat,e.location.lng],{icon:p}).addTo(d)}
 },{"./helpers":"JBS3","../images/icon-location.svg":"Fmrz"}]},{},["H99C"], null)
-//# sourceMappingURL=%27https:/maatzie.github.io/IP_tracker%27/src.61e9f261.js.map
+//# sourceMappingURL=src.61e9f261.js.map
