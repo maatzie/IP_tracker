@@ -2,11 +2,12 @@
   "name": "ip-address-tracker-master",
   "version": "1.0.0",
   "description": "IP address tracker",
-  "homepage": "https://maatzie.github.io/IP_tracker/",
+  "private": true,
+  "homepage": "https://maatzie.github.io/IP_tracker",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir=build",
+    "build": "parcel build index.html --out-dir=build --public-url 'https://maatzie.github.io/IP_tracker'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
